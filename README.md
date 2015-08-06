@@ -1,2 +1,2 @@
 # todolist-2.0
-todo list app remade using AngularJS
+this todo list app will take the form of the previous todo list app, but instead will be coded using AngularJS rather than jQuery.
