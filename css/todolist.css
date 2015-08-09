@@ -107,11 +107,11 @@ div #selectColor {
 	padding-bottom: 10px;
 }
 
-div #orderDelete {
+div #sortDelete {
 	margin-bottom: 20px;
 }
 
-#orderForm {
+#sortForm {
 	display: inline;
 	margin: 0 0 0 56px;
 	padding: 0;
@@ -121,7 +121,7 @@ div #orderDelete {
 	margin: 0 0 0 206px;
 	padding: 0;
 }
-#deleteMode, #orderMode {
+#deleteMode, #sortMode {
 	height: 30px;
 }
 

@@ -15,30 +15,29 @@
 			<form id="controls">
 				<input type="text" id="inputLabel" placeholder="Label it" ng-model="newTitle"/>
 				<button id="addNew" ng-click="addItem()">Add New</button>
-				<div id="selectColor" ng-show="newTitle">
+				<div id="selectColor">
 					<button class="color" id="red" ng-click="newColor='red'"/>
 					<button class="color" id="yellow" ng-click="newColor='yellow'"/>
-					<button class="color" id="green" ng-click="newColor='green'"/>
+					<button class="color" id="green" ng-click="newColor='Green'"/>
 					<button class="color" id="white" ng-click="newColor='white'"/>
 				</div>
 			</form>
 
+<!--
 
-
-			<div id="orderDelete">
-				<div id="orderForm">
-					<button id="orderMode" ng-click="orderList()">Sort</button>
+			<div id="sortDelete" ng-controller="sortDeleteCtrl">
+				<div id="sortForm">
+					<button id="sortMode" ng-click="sortMode()">Sort</button>
 				</div>
 				<div id="deleteForm">
-					<button id="deleteMode" ng-click="toggleClickMode()">Delete</button>
+					<button id="deleteMode" ng-click="deleteMode()">Delete</button>
 				</div>
 			</div>
 
-
+-->
 			<div id="listContainer">
 				<ul id="list">
-					<li ng-repeat="item in items | orderBy: orderMode" ng-class="item.color"
-					ng-click="clickModeAction(item.color, item)">
+					<li ng-repeat="item in items" ng-class="item.color">
 						{{item.title}}
 					</li>
 				</ul>
@@ -46,7 +45,3 @@
 		</div>
 	</body>
 </html>
-
-<!-- ng-click="chngColor(item.color, item)" -->
-
-<!-- ng-click="deleteItem(item)" -->
