@@ -1,3 +1,5 @@
+'use strict';
+
 var todoCtrls = angular.module('todoCtrls', []);
 
 todoCtrls.controller('itemsCtrl', ['$scope', function($scope) {
