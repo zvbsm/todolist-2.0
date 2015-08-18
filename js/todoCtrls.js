@@ -12,8 +12,12 @@ todoCtrls.controller('itemsCtrl', ['$scope', function($scope) {
 
 	$scope.addItem = function() {
 		if ($scope.newTitle) {
-				var clr;
+				var clr = 0;
 				var created = new Date();
+				
+				if(!$scope.newColor || $scope.newColor === '') {
+					$scope.newColor = 'white';
+				};
 
 				if($scope.newColor === 'red') {clr = 0};
 				if($scope.newColor === 'yellow') {clr = 1};
@@ -48,7 +52,9 @@ console.log('delete is ' + $scope.clickMode);
 	};
 	$scope.chngColor = function(thisColor, thisItem) {
 		var index = $scope.items.indexOf(thisItem);
-		if(thisColor === 'red') {$scope.items[index].color = 'yellow'};
+		$scope.items[index].orderColor++;
+		if($scope.items[index].orderColor > 3) {$scope.items[index].orderColor = 0};
+		if(thisColor === 'red') {$scope.items[index].color = 'yellow';};
 		if(thisColor === 'yellow') {$scope.items[index].color = 'green'};
 		if(thisColor === 'green') {$scope.items[index].color = 'white'};
 		if(thisColor === 'white') {$scope.items[index].color = 'red'};
