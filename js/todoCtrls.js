@@ -1,14 +1,13 @@
 'use strict';
 
-var todoCtrls = angular.module('todoCtrls', []);
+var todoCtrls = angular.module('todoCtrls', ['todoServices']);
 
-todoCtrls.controller('itemsCtrl', ['$scope', function($scope) {
-	$scope.items = [
-		{title: 'walk dog', color: 'red', date: 1439090155449, orderColor: 0},
-		{title: 'groceries', color: 'white', date: 1439090155450, orderColor: 3},
-		{title: 'program', color: 'green', date: 1439090155451, orderColor: 2},
-		{title: 'sleep', color: 'yellow', date: 1439090155452, orderColor: 1}
-		];
+todoCtrls.controller('itemsCtrl', function($scope, getListService) {
+
+$scope.items = null;
+getListService.success(function(data) {
+	$scope.items = data;
+});
 
 	$scope.addItem = function() {
 		if ($scope.newTitle) {
@@ -73,4 +72,4 @@ console.log('delete is ' + $scope.clickMode);
 console.log('order by ' + $scope.orderMode);
 
 	};
-}]);
+});
